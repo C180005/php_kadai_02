@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/**
+ * レストラン一覧ページのスタイル
+ */
+h2 {
+  float: left;
+}
+
+select {
+  height: 2.1rem;
+}
+
+table {
+  background-color: #F8FBEC;
+  width: 39.6rem;
+  margin-top: 1.2rem;
+}
+table tr td {
+  background-color: #F8FBEC;
+  margin: 0.5rem;
+  padding: 0.5rem 0.5rem;
+  vertical-align: top;
+}
+table tr td.info dl {
+  padding-top: 0.5rem;
+}
+table tr td.info dl dt {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+table tr td.info dl dd {
+  line-height: 1.4;
+}
+table tr td.detail {
+  width: 3rem;
+}

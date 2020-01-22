@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/**
+ * レストラン詳細ページのスタイル
+ */
+table, dl {
+  margin: 0.3rem 1rem;
+}
+
+dl dt {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+dl dd {
+  margin-bottom: 1.2rem;
+}
+
+#description table {
+  margin-top: 0.6rem;
+}
+#description table td {
+  vertical-align: top;
+}
+#description table td.info, #description table td.detail {
+  padding-top: 0;
+}
+#description table td.info dt {
+  margin-bottom: 0.3rem;
+}
+
+#reviews, #review {
+  margin-top: 2.175rem;
+}
+
+#reviews dl dt {
+  color: #008000;
+}
+
+#review table, #review th, #review td {
+  border: 1px solid #93c400;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  padding: 0.6rem;
+}
+#review table {
+  width: 38.4rem;
+}
+#review table th {
+  background-color: #e9f3cc;
+  width: 6rem;
+  font-weight: bold;
+}
+#review form {
+  text-align: center;
+}
+#review form input[type="text"], #review form textarea {
+  width: 30rem;
+}
+#review form textarea {
+  height: 5.4rem;
+}

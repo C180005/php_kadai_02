@@ -1,0 +1,75 @@
+@charset "UTF-8";
+#index p {
+  text-indent: 1rem;
+  line-height: 1.4;
+  margin: 0.5rem 0;
+}
+#index dl {
+  margin: 1.75em 0;
+}
+#index dl dt {
+  font-weight: bold;
+  text-decoration: underline;
+}
+#index ol {
+  margin: 1.5rem 0;
+}
+#index ol[name="functions"] {
+  margin-left: 5rem;
+  text-indent: -5rem;
+  counter-reset: step;
+  width: 85%;
+  margin: 0.75rem 6rem;
+  	/*
+    margin-left: 5rem;
+    text-indent: -5rem;
+    counter-reset: funx;
+    width: 85%;
+    margin: 0.75rem 6rem;
+    li {
+  		&:before {
+  			counter-increment: funx;
+  			content: "機能-" counter(funx) "：";
+  		}
+  	}
+  	*/
+}
+#index ol[name="functions"] li:before {
+  counter-increment: step;
+  content: "機能-" counter(step) "：";
+}
+#index ol[name="steps"] {
+  margin-left: 5rem;
+  text-indent: -5rem;
+  counter-reset: step;
+  width: 85%;
+  margin: 0.75rem 6rem;
+  	/*
+    margin-left: 5rem;
+    text-indent: -5rem;
+    counter-reset: step;
+    width: 85%;
+    margin: 0.75rem 6rem;
+    li {
+  		&:before {
+  			counter-increment: step;
+  			content: "手順-" counter(step) "：";
+  		}
+  	}
+  	*/
+}
+#index ol[name="steps"] li:before {
+  counter-increment: step;
+  content: "手順-" counter(step) "：";
+}
+#index ol li {
+  padding: 0.25rem 0.75rem;
+  line-height: 1.4;
+}
+
+.emphasis {
+  color: crimson;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration-line: underline;
+}
