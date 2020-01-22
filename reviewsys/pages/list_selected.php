@@ -14,7 +14,7 @@
 	</header>
 	<main>
 		<div class="clearfix">
-			<h2>レストラン一覧</h2>
+			<h2>選択されました</h2>
 			<form action="list.php" name="search_form" method="get">
 <?php
 $area = [
@@ -98,12 +98,27 @@ $shop7 = array(
     'photo_title' => 'レストラン さくら',
     'photo_desc' => '四季折々の自然を楽しむ伊豆市に、ひっそりと佇む隠れ家レストラン。<br>旅行でいらっしゃった方も、お近くの方も、お気軽にお立ち寄りください。'
 );
+
 // -----
 $shop_no[] = shop0;
 for ($num_shop = 1; $num_shop <= 7; $num_shop ++) {
     $shop_str = 'shop' . "{$num_shop}";
     $shop_no[] = $shop_str;
 }
+
+// ------------- start
+
+
+$area_selected = @$_GET[“area”];
+echo $area_selected;
+foreach ($shop_no as  $val) {
+    if ($$val['area']==$area_selected) {
+        echo '('.$val.')<br>';
+    }
+    echo $area_selected;
+}
+
+// -------------- end
 
 echo "<br />" . " ----------- local_select  -------------" . "<br />";
 foreach ($shop_no as $tt) {

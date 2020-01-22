@@ -15,7 +15,7 @@
 	<main>
 		<div class="clearfix">
 			<h2>レストラン一覧</h2>
-			<form action="list.php" name="search_form" method="get">
+			<form action="list_selected.php" name="search_form" method="get">
 <?php
 $area = [
     '-- 地域を選んで下さい --',
@@ -105,30 +105,7 @@ for ($num_shop = 1; $num_shop <= 7; $num_shop ++) {
     $shop_no[] = $shop_str;
 }
 
-echo "<br />" . " ----------- local_select  -------------" . "<br />";
-foreach ($shop_no as $tt) {
-    if ($$tt['area'] == "神戸") {
-        $koube[] = $$tt;
-        echo $$tt['area'] . "<br />";
-    } elseif ($$tt['area'] == "伊豆") {
-        $izu[] = $$tt;
-        echo $$tt['area'] . "<br />";
-    } elseif ($$tt['area'] == "福岡") {
-        $fukuoka[] = $$tt;
-        echo $$tt['area'] . "<br />";
-        echo $$tt['photo_alt']."<br />";
-       
-    }
-}
-echo "<br />" . " ----------- local_select  -------------" . "<br />";
-foreach ($koube as $ko) {
-    echo $ko['area'] . "<br />";
-    echo "{$ko['area']} <br />";
-}
 ?>
-<style>
----------------------------
-</style>
 		<table class="list">
 <?php
 foreach ($shop_no as $tt) {
