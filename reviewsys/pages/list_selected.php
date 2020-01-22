@@ -14,25 +14,16 @@
 	</header>
 	<main>
 		<div class="clearfix">
-			<h2>選択されました</h2>
-			<form action="list.php" name="search_form" method="get">
 <?php
-$area = [
-    '-- 地域を選んで下さい --',
-    '福岡',
-    '神戸',
-    '伊豆'
-];
-$listbox = "<select name=\"area\">\n";
-for ($i = 0; $i < count($area); $i ++) {
-    $listbox .= "\t<option value=\"{$area[$i]}\">{$area[$i]}</option>\n";
-}
-$listbox .= "</select>\n";
-echo "{$listbox}";
+$area_selected = @$_GET['area'];
+if ($area_selected == '-- 地域を選んで下さい --')
+    echo '<h2>地域を選択してください</h2>';
+else
+    echo '<h2>' . $area_selected . 'のレストラン</h2>';
 ?>
-					<input type="submit" value="検索" />
-			</form>
-		</div>
+
+<a href="list.php"><button type="button" class="btn btn-success">レストラン一覧に戻る</button></a>
+
 <?php
 $shop0 = array(
     'id' => 0,
@@ -99,54 +90,26 @@ $shop7 = array(
     'photo_desc' => '四季折々の自然を楽しむ伊豆市に、ひっそりと佇む隠れ家レストラン。<br>旅行でいらっしゃった方も、お近くの方も、お気軽にお立ち寄りください。'
 );
 
-// -----
+
 $shop_no[] = shop0;
 for ($num_shop = 1; $num_shop <= 7; $num_shop ++) {
     $shop_str = 'shop' . "{$num_shop}";
     $shop_no[] = $shop_str;
 }
 
-// ------------- start
 
-
-$area_selected = @$_GET[“area”];
-echo $area_selected;
-foreach ($shop_no as  $val) {
-    if ($$val['area']==$area_selected) {
-        echo '('.$val.')<br>';
-    }
-    echo $area_selected;
-}
-
-// -------------- end
-
-echo "<br />" . " ----------- local_select  -------------" . "<br />";
-foreach ($shop_no as $tt) {
-    if ($$tt['area'] == "神戸") {
-        $koube[] = $$tt;
-        echo $$tt['area'] . "<br />";
-    } elseif ($$tt['area'] == "伊豆") {
-        $izu[] = $$tt;
-        echo $$tt['area'] . "<br />";
-    } elseif ($$tt['area'] == "福岡") {
-        $fukuoka[] = $$tt;
-        echo $$tt['area'] . "<br />";
-        echo $$tt['photo_alt']."<br />";
-       
+$shop_no_selected[] = shop0;
+foreach ($shop_no as $val) {
+    if ($$val['area'] == $area_selected) {
+        $shop_no_selected[] = $val;
     }
 }
-echo "<br />" . " ----------- local_select  -------------" . "<br />";
-foreach ($koube as $ko) {
-    echo $ko['area'] . "<br />";
-    echo "{$ko['area']} <br />";
-}
+
+
 ?>
-<style>
----------------------------
-</style>
-		<table class="list">
+			<table class="list">
 <?php
-foreach ($shop_no as $tt) {
+foreach ($shop_no_selected as $tt) {
     if ($tt != "shop0") {
         echo "<tr>
               <td class='photo'><img width='110' alt={${$tt}['photo_alt']}
@@ -163,8 +126,7 @@ foreach ($shop_no as $tt) {
     }
 }
 ?>
-    </table >
-	</main>
+    </table></main>
 	<footer>
 		<div id="copyright">(C) 2019 The Web System Development Course</div>
 	</footer>
