@@ -10,7 +10,9 @@ class area
         '伊豆'
     ];
 }
+/*
 $array_area = new area();
 print_r($array_area->area[2]);
 //print_r($array_area);
+ */
 ?>
