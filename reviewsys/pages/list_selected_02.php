@@ -1,4 +1,4 @@
-<?php require 'header.tpl';?>
+<?php require 'header_02.php';?>
 <main>
 	<div class="clearfix">
 <?php
@@ -15,8 +15,7 @@ foreach ($shop_no as $val) {
         $shop_no_selected[] = $val;
     }
 }
-// $shop_no = $shop_no_selected; 
 require 'shop_table_02.php'; ?>
 </main>
-<?php require 'footer.tpl';?>
+<?php require 'footer_02.php';?>
     

@@ -68,10 +68,23 @@ class Restaurant {
 $array_restaurant = new Restaurant();
 // print_r($array_restaurant->shop7['area']);
 // print_r($array_restaurant->shop7);
-$i=6;
+for ($i=0; $i<=7; $i++) {
 $shop = "shop"."{$i}";
-$shop = array(
+${$shop} = array(
     'id' => $array_restaurant->{$shop}['id'],
-    'area' => $array_restaurant->{$shop}['area']
+    'area' => $array_restaurant->{$shop}['area'],
+    'photo_alt' => $array_restaurant->{$shop}['photo_alt'],
+    'photo_src' => $array_restaurant->{$shop}['photo_src'],
+    'photo_title' => $array_restaurant->{$shop}['photo_title'],
+    'photo_desc' => $array_restaurant->{$shop}['photo_desc']
  );
- print_r($shop);
+//var_dump($shop);
+}
+// print_r($shop3);
+// -----
+$shop_no[] = shop0;
+for ($num_shop = 1; $num_shop <= 7; $num_shop ++) {
+    $shop_str = 'shop' . "{$num_shop}";
+    $shop_no[] = $shop_str;
+}
+?>

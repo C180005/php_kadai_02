@@ -1,4 +1,4 @@
-<?php require 'header.tpl';?>
+<?php require 'header_02.php';?>
 <main>
 	<div class="clearfix">
 		<h2>地域を選んで下さい</h2>
@@ -16,4 +16,4 @@ echo "{$listbox}";
 		</form>
 	</div>
 </main>
-<?php require 'footer.tpl';?>
+<?php require 'footer_02.php';?>
