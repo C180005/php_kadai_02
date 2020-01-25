@@ -1,6 +1,7 @@
 		<table class="list">
 <?php
-foreach ($shop_no as $tt) {
+foreach ($shop_no_selected as $tt) {
+// foreach ($shop_no as $tt) {
     if ($tt != "shop0") {
         echo "<tr>
               <td class='photo'><img width='110' alt={${$tt}['photo_alt']}

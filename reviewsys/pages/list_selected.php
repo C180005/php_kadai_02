@@ -15,7 +15,7 @@ foreach ($shop_no as $val) {
         $shop_no_selected[] = $val;
     }
 }
-$shop_no = $shop_no_selected; 
+// $shop_no = $shop_no_selected; 
 require 'shop_table.php'; ?>
 </main>
 <?php require 'footer.tpl';?>
