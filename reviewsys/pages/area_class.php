@@ -11,6 +11,7 @@ class area
     ];
 }
 $array_area = new area();
-print_r($array_area->area[2]);
-//print_r($array_area);
+for ($i = 0; $i <= 4; $i ++) {
+    $area[] = $array_area->area[$i];
+}
 ?>

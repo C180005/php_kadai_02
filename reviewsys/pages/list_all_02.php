@@ -66,7 +66,5 @@ class Restaurant {
     );
 }
 $array_restaurant = new Restaurant();
-// var_dump($array_restaurant->shop0);
-// print_r($array_restaurant->shop0);
  print_r($array_restaurant->shop7['area']);
 ?>

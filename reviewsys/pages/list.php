@@ -21,7 +21,5 @@ echo "{$listbox}";
 			<input type="submit" value="検索" />
 		</form>
 	</div>
-		
-<?php //require 'shop_table.php'; ?>
 </main>
 <?php require 'footer.tpl';?>
